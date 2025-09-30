@@ -1,0 +1,34 @@
+$size-mobile-small: 360px;
+$size-mobile: 500px;
+$size-tablet: 768px;
+$size-laptop: 1024px;
+$size-desktop: 1280px;
+
+$integer-mobile-small: 360;
+$integer-desktop: 1500;
+
+/**
+* @ $pcSize: size desktop 40 (like 40px)
+* @ $mobSize: size mobile 20 (like 20px)
+  @include adaptive-font(60, 30);   => like (60px, 30px) max-min
+ */
+@mixin adaptive-font($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $integer-desktop - $integer-mobile-small;
+  font-size: calc(
+      #{$mobSize + px} + #{$addSize} *
+      ((min(100vw, 1360px) - $size-mobile-small) / #{$maxWidth})
+  );
+}
+
+@mixin banner-spans($n, $spans) {
+  @for $i from 1 through length($spans) {
+    $span: nth($spans, $i);
+
+    $offset: length($spans) - $i + 1;
+
+    &:nth-child(#{$n}n - #{$offset}):nth-last-of-type(1) {
+      grid-column: span #{$span};
+    }
+  }
+}

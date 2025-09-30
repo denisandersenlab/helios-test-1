@@ -1,0 +1,33 @@
+@import '@styles/vars.scss';
+
+.socialLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 16px;
+  transition: opacity 0.2s;
+
+  @media (max-width: $size-tablet) {
+    height: 14px;
+  }
+
+  @media (max-width: $size-mobile) {
+    height: 12px;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.icon {
+  height: 16px;
+
+  @media (max-width: $size-tablet) {
+    height: 14px;
+  }
+
+  @media (max-width: $size-mobile) {
+    height: 12px;
+  }
+}

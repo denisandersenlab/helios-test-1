@@ -1,0 +1,168 @@
+.wrapper {
+  width: 100%;
+}
+
+.container {
+  margin: 0 105px;
+
+  @media (max-width: 1200px) {
+    margin: 0 60px;
+  }
+
+  @media (max-width: 992px) {
+    margin: 0 40px;
+  }
+
+  @media (max-width: 768px) {
+    margin: 0 20px;
+  }
+}
+
+.title {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 60px;
+    font-family: 'WF Visual Sans', sans-serif;
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 107%;
+    color: #000;
+
+    @media (max-width: 992px) {
+      font-size: 48px;
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.content {
+  display: flex;
+  position: relative;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.tabsList {
+  display: flex;
+  flex-direction: column;
+  padding-right: 66px;
+  position: relative;
+
+  @media (max-width: 992px) {
+    padding-right: 40px;
+  }
+
+  @media (max-width: 768px) {
+    padding-right: 0;
+    padding-bottom: 20px;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 10px;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: #c8d2cb;
+
+    @media (max-width: 768px) {
+      right: auto;
+      left: 0;
+      top: auto;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+    }
+  }
+}
+
+.tabButton {
+  max-width: 253px;
+  width: 100%;
+  text-align: left;
+  padding: 10px 19px 10px 11px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 115%;
+  color: #212121;
+  transition: all 0.3s ease;
+  border-radius: 15px;
+
+  @media (max-width: 768px) {
+    max-width: none;
+    width: auto;
+    flex-shrink: 0;
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+
+  &:hover {
+    background-color: #f5f5f5;
+  }
+
+  &.active {
+    background-color: #d2dbd4;
+    color: #005148;
+  }
+}
+
+.tabContent {
+  max-width: 823px;
+  flex: 1;
+  padding-left: 66px;
+
+  @media (max-width: 992px) {
+    padding-left: 40px;
+  }
+
+  @media (max-width: 768px) {
+    padding-left: 0;
+    padding-top: 20px;
+    max-width: 100%;
+  }
+}
+
+.bottomBanner {
+  margin-top: 77px;
+  display: flex;
+
+  @media (max-width: 768px) {
+    margin-top: 40px;
+    flex-direction: column;
+  }
+
+  .bottomBannerSide {
+    max-width: 253px;
+    width: 100%;
+    height: 1px;
+    margin-right: 66px;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+}

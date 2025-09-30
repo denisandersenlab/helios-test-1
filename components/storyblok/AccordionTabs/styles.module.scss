@@ -1,0 +1,36 @@
+@import '@styles/vars';
+
+.container {
+  max-width: 1518px;
+  margin: 0 auto;
+
+  @media (max-width: 1600px) {
+    margin: 0 20px;
+  }
+}
+
+.title h2 {
+  @include adaptive-font(64, 40);
+  margin-bottom: 65px;
+  font-weight: 600;
+  line-height: 107%;
+  color: #212121;
+
+  @media (max-width: $size-mobile) {
+    margin-bottom: 40px;
+  }
+}
+
+.tabs {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  width: 100%;
+
+  @media (max-width: $size-mobile) {
+    gap: 25px;
+  }
+}

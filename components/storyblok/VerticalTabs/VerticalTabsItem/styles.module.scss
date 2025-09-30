@@ -1,0 +1,29 @@
+.wrapper {
+  width: 100%;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contentItem {
+  width: 100%;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #D3D7D4;
+  }
+}

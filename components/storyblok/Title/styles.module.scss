@@ -1,0 +1,45 @@
+@import '@styles/vars';
+
+.h1 {
+  line-height: 1;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-visual-sans);
+  @include adaptive-font(77, 36);
+}
+
+.h2 {
+  margin-bottom: 1.25rem;
+  font-family: var(--font-visual-sans);
+  @include adaptive-font(64, 30);
+  line-height: 107%;
+}
+
+.h3 {
+  font-size: 1.875rem; /* 30px */
+  margin-bottom: 1rem;
+  font-family: var(--font-visual-sans);
+}
+
+.h4 {
+  font-size: 1.5rem; /* 24px */
+  margin-bottom: 0.75rem;
+  font-family: var(--font-visual-sans);
+}
+
+.h5 {
+  font-size: 1.25rem; /* 20px */
+  margin-bottom: 0.75rem;
+  font-family: var(--font-visual-sans);
+}
+
+.h6 {
+  font-size: 1.125rem; /* 18px */
+  margin-bottom: 0.5rem;
+  font-family: var(--font-visual-sans);
+}
+
+.default {
+  font-size: 1rem; /* 16px - fallback */
+  margin-bottom: 0.5rem;
+  font-family: var(--font-visual-sans);
+}

@@ -1,0 +1,39 @@
+{
+  "name": "next-sb-tw",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --experimental-https",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "pull-schemas": "pnpm storyblok pull-components --space 287059588272120 --rd --file-name production --path src/generated/",
+    "generate-types": "npx storyblok login --token $STORYBLOK_PAT_TOKEN --region eu && pnpm pull-schemas && storyblok generate-typescript-typedefs --sourceFilePaths ./src/generated/components.production.json --destinationFilePath src/generated/sb.ts",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@storyblok/react": "^5.4.4",
+    "clsx": "^2.1.1",
+    "next": "15.4.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sass": "^1.92.1",
+    "swiper": "^12.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@typescript-eslint/eslint-plugin": "^8.14.0",
+    "@typescript-eslint/parser": "^8.14.0",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "15.0.3",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "prettier": "^3.6.2",
+    "storyblok": "^3.36.1",
+    "typescript": "^5.6.3"
+  }
+}

@@ -1,0 +1,67 @@
+.richtext p {
+  margin-bottom: 1rem;
+}
+
+.richtext h1,
+.richtext h2,
+.richtext h3,
+.richtext h4,
+.richtext h5,
+.richtext h6 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.richtext ul,
+.richtext ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.richtext li {
+  margin-bottom: 0.25rem;
+}
+
+.richtext blockquote {
+  border-left: 4px solid #e5e7eb;
+  padding-left: 1rem;
+  margin: 1rem 0;
+  font-style: italic;
+  color: #6b7280;
+}
+
+.richtext code {
+  background-color: #f3f4f6;
+  padding: 0.125rem 0.25rem;
+  border-radius: 3px;
+  font-family: monospace;
+  font-size: 0.875em;
+}
+
+.richtext pre {
+  background-color: #1f2937;
+  color: #f3f4f6;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+.richtext pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+  .richtext blockquote {
+    border-left-color: #374151;
+    color: #9ca3af;
+  }
+
+  .richtext code {
+    background-color: #374151;
+    color: #f3f4f6;
+  }
+}

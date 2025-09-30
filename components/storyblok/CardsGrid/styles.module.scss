@@ -1,0 +1,779 @@
+@import '@styles/vars';
+
+.wrapper {
+  &.gradientGreen {
+    background: linear-gradient(218.88deg, #005a48 8.17%, #003630 77.68%);
+
+    .card:not(.banner) {
+      background: white;
+    }
+
+    .text {
+      color: #e7ede9;
+    }
+
+    .titleCompact {
+      color: #fff;
+    }
+  }
+
+  &.green {
+    background: #005148;
+
+    .text {
+      color: #e7ede9;
+    }
+
+    .titleCompact {
+      color: #fff;
+    }
+  }
+}
+
+.container {
+  padding: 0 20px;
+  margin: 0 auto;
+  max-width: 1558px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 60px;
+
+  @media (max-width: $size-tablet) {
+    margin-bottom: 30px;
+  }
+}
+
+.titleTwoOneOneTwo {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
+  @include adaptive-font(32, 20);
+  line-height: 107%;
+  color: #212121;
+  text-align: left;
+  margin-bottom: 48px;
+
+  @media (max-width: $size-tablet) {
+    margin-bottom: 30px;
+  }
+}
+
+.text {
+  text-align: center;
+}
+
+.content {
+  display: grid;
+}
+
+.card {
+  @media (max-width: $size-mobile) {
+    min-height: 240px;
+  }
+}
+
+.threeCards {
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 20px;
+
+  .banner {
+    @include banner-spans(3, (3, 2));
+  }
+
+  @media (max-width: $size-laptop) {
+    grid-template-columns: repeat(2, 1fr);
+
+    .banner {
+      @include banner-spans(2, (2));
+    }
+  }
+
+  @media (max-width: $size-mobile) {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+
+    .banner {
+      @include banner-spans(1, (1));
+    }
+  }
+}
+
+.fourCards {
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: auto;
+  gap: 36px 20px;
+
+  .banner {
+    @include banner-spans(4, (4, 3, 2));
+    grid-row: span 1;
+  }
+
+  @media (max-width: $size-laptop) {
+    grid-template-columns: repeat(3, 1fr);
+
+    .banner {
+      @include banner-spans(3, (3, 2));
+    }
+  }
+
+  @media (max-width: $size-tablet) {
+    grid-template-columns: repeat(2, 1fr);
+
+    .banner {
+      @include banner-spans(2, (2));
+    }
+  }
+
+  @media (max-width: $size-mobile) {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+
+    .banner {
+      @include banner-spans(1, (1));
+    }
+  }
+}
+
+.threeTwoCards {
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr;
+  gap: 20px;
+
+  > * {
+    grid-column: span 3;
+  }
+
+  > :nth-child(6n - 5),
+  > :nth-child(6n - 4),
+  > :nth-child(6n - 3) {
+    grid-column: span 2;
+  }
+
+  .banner {
+    grid-column: span 6;
+  }
+
+  @media (max-width: $size-laptop) {
+    > :nth-child(n) {
+      grid-column: span 3;
+    }
+
+    :nth-child(2n - 1):nth-last-of-type(1) {
+      grid-column: span 6;
+    }
+  }
+
+  @media (max-width: $size-mobile) {
+    > :nth-child(n) {
+      grid-column: span 6;
+    }
+  }
+}
+
+.twoThreeCards {
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr;
+  gap: 20px;
+
+  > * {
+    grid-column: span 2;
+  }
+
+  > :nth-child(6n - 5),
+  > :nth-child(6n - 4) {
+    grid-column: span 3;
+  }
+
+  // First two imageCards (positions 0 and 1) - image takes 50% width and 100% height
+  > :nth-child(6n - 5).imageCard,
+  > :nth-child(6n - 4).imageCard {
+    padding: 30px;
+
+    .image,
+    & > div:last-child {
+      width: 50%;
+      min-width: 50%;
+      height: 100%;
+
+      img {
+        max-height: none;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 25px;
+      }
+    }
+  }
+
+  // Cards 3, 4, 5 (vertical-reverse cards)
+  > :nth-child(6n - 3).imageCard,
+  > :nth-child(6n - 2).imageCard,
+  > :nth-child(6n - 1).imageCard {
+    padding: 30px 30px 57px 30px;
+
+    & > div:last-child {
+      img {
+        object-fit: cover;
+        border-radius: 25px;
+      }
+    }
+  }
+
+  .banner {
+    grid-column: span 6 !important;
+  }
+
+  @media (max-width: $size-laptop) {
+    > :nth-child(n) {
+      grid-column: span 3;
+    }
+
+    .iconCard:nth-child(5n) {
+      grid-column: span 6;
+    }
+  }
+
+  @media (max-width: $size-tablet) {
+    > :nth-child(n) {
+      grid-column: span 6;
+    }
+  }
+}
+
+.twoCards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+
+  @media (max-width: $size-tablet) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.titleCompact {
+  font-family: 'WF Visual Sans', sans-serif;
+  font-weight: 600;
+  @include adaptive-font(64, 32);
+  line-height: 107%;
+  text-align: center;
+  margin: 0 auto 20px;
+  max-width: 789px;
+}
+
+.textCompact {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  @include adaptive-font(22, 16);
+  line-height: 115%;
+  text-align: center;
+  color: #ffffffc9;
+  margin: 0 auto 40px;
+  max-width: 789px;
+
+  @media (max-width: $size-tablet) {
+    margin-bottom: 30px;
+  }
+
+  @media (max-width: $size-mobile) {
+    margin-bottom: 20px;
+  }
+}
+
+.subtitleCompact {
+  font-family: 'WF Visual Sans', sans-serif;
+  font-weight: 600;
+  @include adaptive-font(33, 24);
+  line-height: 115%;
+  text-align: center;
+  color: #d8fb97;
+  margin: 0 auto 60px;
+  max-width: 789px;
+
+  @media (max-width: $size-tablet) {
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: $size-mobile) {
+    margin-bottom: 30px;
+  }
+}
+
+.twoOneOneOneTwoOne {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+
+  // Odd rows: first card spans 2 columns, second and third cards take 1 column each
+  > :nth-child(6n + 1) {
+    grid-column: span 2;
+  }
+  > :nth-child(6n + 2),
+  > :nth-child(6n + 3) {
+    grid-column: span 1;
+  }
+
+  // Even rows: first card takes 1 column, second card spans 2 columns, third card takes 1 column
+  > :nth-child(6n + 4) {
+    grid-column: span 1;
+  }
+  > :nth-child(6n + 5) {
+    grid-column: span 2;
+  }
+  > :nth-child(6n + 6) {
+    grid-column: span 1;
+  }
+
+  // Banner cards always span full width
+  .banner {
+    grid-column: span 4 !important;
+  }
+
+  @media (max-width: $size-laptop) {
+    grid-template-columns: repeat(3, 1fr);
+
+    // Reset all cards to span appropriate columns for 3-column layout
+    > :nth-child(n) {
+      grid-column: span 1;
+    }
+
+    // Adjust pattern for 3 columns
+    > :nth-child(5n + 1) {
+      grid-column: span 2;
+    }
+    > :nth-child(5n + 3) {
+      grid-column: span 2;
+    }
+
+    .banner {
+      grid-column: span 3 !important;
+    }
+  }
+
+  @media (max-width: $size-tablet) {
+    grid-template-columns: repeat(2, 1fr);
+
+    // Reset all cards for 2-column layout
+    > :nth-child(n) {
+      grid-column: span 1;
+    }
+
+    // Every third card spans both columns
+    > :nth-child(3n) {
+      grid-column: span 2;
+    }
+
+    .banner {
+      grid-column: span 2 !important;
+    }
+  }
+
+  @media (max-width: $size-mobile) {
+    grid-template-columns: 1fr;
+
+    > :nth-child(n) {
+      grid-column: span 1;
+    }
+
+    .banner {
+      grid-column: span 1 !important;
+    }
+  }
+}
+
+.twoOneOneOneOneTwo {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+
+  & > div {
+    justify-content: flex-end !important;
+
+    & > div:last-child {
+      aspect-ratio: revert !important;
+      height: 403px;
+    }
+  }
+
+  // First row: first card spans 2 columns, second and third cards take 1 column each
+  > :nth-child(6n + 1) {
+    grid-column: span 2;
+  }
+  > :nth-child(6n + 2),
+  > :nth-child(6n + 3) {
+    grid-column: span 1;
+  }
+
+  // Second row: first and second cards take 1 column, third card spans 2 columns
+  > :nth-child(6n + 4),
+  > :nth-child(6n + 5) {
+    grid-column: span 1;
+  }
+  > :nth-child(6n + 6) {
+    grid-column: span 2;
+  }
+
+  // Banner cards always span full width
+  .banner {
+    grid-column: span 4 !important;
+  }
+
+  @media (max-width: $size-laptop) {
+    grid-template-columns: repeat(3, 1fr);
+
+    // Reset all cards to span appropriate columns for 3-column layout
+    > :nth-child(n) {
+      grid-column: span 1;
+    }
+
+    // Adjust pattern for 3 columns
+    > :nth-child(5n + 1) {
+      grid-column: span 2;
+    }
+    > :nth-child(5n + 5) {
+      grid-column: span 2;
+    }
+
+    .banner {
+      grid-column: span 3 !important;
+    }
+  }
+
+  @media (max-width: $size-tablet) {
+    grid-template-columns: repeat(2, 1fr);
+
+    // Reset all cards for 2-column layout
+    > :nth-child(n) {
+      grid-column: span 1;
+    }
+
+    // Every first and last card of 3 spans both columns
+    > :nth-child(3n + 1) {
+      grid-column: span 2;
+    }
+
+    .banner {
+      grid-column: span 2 !important;
+    }
+  }
+
+  @media (max-width: $size-mobile) {
+    grid-template-columns: 1fr;
+
+    > :nth-child(n) {
+      grid-column: span 1;
+    }
+
+    .banner {
+      grid-column: span 1 !important;
+    }
+  }
+}
+
+.twoCardsMax {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 46px;
+
+  @media (max-width: $size-tablet) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.twoOneCards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+
+  // First row: first and second cards take 1 column each
+  > :nth-child(3n + 1),
+  > :nth-child(3n + 2) {
+    grid-column: span 1;
+  }
+
+  // Second row: third card spans 2 columns
+  > :nth-child(3n + 3) {
+    grid-column: span 2;
+  }
+
+  // Banner cards always span full width
+  .banner {
+    grid-column: span 2 !important;
+  }
+
+  @media (max-width: $size-laptop) {
+    // Keep same layout for laptop
+  }
+
+  @media (max-width: $size-mobile) {
+    grid-template-columns: 1fr;
+
+    > :nth-child(n) {
+      grid-column: span 1;
+    }
+
+    .banner {
+      grid-column: span 1 !important;
+    }
+  }
+}
+
+.twoOneOneTwo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+  // First row: first card spans 2 columns, second card takes 1 column
+  > :nth-child(4n + 1) {
+    grid-column: span 2;
+  }
+  > :nth-child(4n + 2) {
+    grid-column: span 1;
+  }
+
+  // Second row: third card takes 1 column, fourth card spans 2 columns
+  > :nth-child(4n + 3) {
+    grid-column: span 1;
+  }
+  > :nth-child(4n + 4) {
+    grid-column: span 2;
+  }
+
+  // Banner cards always span full width
+  .banner {
+    grid-column: span 3 !important;
+  }
+
+  // Custom bullet styles for unordered lists in this layout
+  ul {
+    list-style: none;
+    padding-left: 2rem;
+
+    li {
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: -1.5rem;
+        top: 0.25rem;
+        width: 16px;
+        height: 16px;
+        background-image: url('./bullet-icon.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  @media (max-width: $size-laptop) {
+    grid-template-columns: repeat(2, 1fr);
+
+    // Reset for 2-column layout
+    > :nth-child(n) {
+      grid-column: span 1;
+    }
+
+    // Alternate pattern: first card of each pair spans 2
+    > :nth-child(2n + 1) {
+      grid-column: span 2;
+    }
+    > :nth-child(2n) {
+      grid-column: span 1;
+    }
+
+    // Last card if odd number spans full width
+    > :nth-child(odd):last-child {
+      grid-column: span 2;
+    }
+
+    .banner {
+      grid-column: span 2 !important;
+    }
+  }
+
+  @media (max-width: $size-mobile) {
+    grid-template-columns: 1fr;
+
+    > :nth-child(n) {
+      grid-column: span 1;
+    }
+
+    .banner {
+      grid-column: span 1 !important;
+    }
+  }
+}
+
+.oneCard {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  .imageCard {
+    max-width: 100%;
+  }
+}
+
+.oneOneTwo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+
+  // First card: spans columns 1-2 in row 1
+  > :nth-child(4n + 1) {
+    grid-column: 1 / 3;
+    grid-row: 1;
+
+    &.imageCard {
+      padding: 30px 36px 30px 30px;
+      gap: 76px;
+
+      & > div:first-child {
+        justify-content: flex-end;
+      }
+
+      & > div:last-child {
+        width: 45%;
+        min-width: 45%;
+        height: 100%;
+
+        img {
+          max-height: none;
+          height: 100%;
+          border-radius: 25px;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  // Second card: spans row 1-2 in column 3
+  > :nth-child(4n + 2) {
+    grid-column: 3;
+    grid-row: 1 / 3;
+
+    &.imageCard {
+      padding: 30px 23px 53px 23px;
+      justify-content: space-between;
+
+      & > div:last-child {
+        height: 60%;
+
+        img {
+          max-height: none;
+          height: 100%;
+          border-radius: 25px;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  // Third card: row 2, column 1
+  > :nth-child(4n + 3) {
+    grid-column: 1;
+    grid-row: 2;
+
+    &.imageCard {
+      padding: 30px 30px 47px 30px;
+
+      & > div:last-child {
+        min-width: 45%;
+        height: 100%;
+
+        img {
+          max-height: none;
+          height: 100%;
+          border-radius: 25px;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  // Fourth card: row 2, column 2
+  > :nth-child(4n + 4) {
+    grid-column: 2;
+    grid-row: 2;
+
+    &.imageCard {
+      padding: 30px 30px 47px 30px;
+
+      & > div:last-child {
+        min-width: 45%;
+        height: 100%;
+
+        img {
+          max-height: none;
+          height: 100%;
+          border-radius: 25px;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  // Banner cards always appear at bottom and span full width
+  .banner {
+    grid-column: 1 / 4;
+    grid-row: auto;
+  }
+
+  @media (max-width: $size-laptop) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+
+    // Reset all cards to default flow
+    > :nth-child(n) {
+      grid-column: span 1;
+      grid-row: auto;
+    }
+
+    // First card spans 2 columns
+    > :nth-child(4n + 1) {
+      grid-column: span 2;
+    }
+
+    // Second card spans 2 columns
+    > :nth-child(4n + 2) {
+      grid-column: span 2;
+    }
+
+    // Banner spans full width
+    .banner {
+      grid-column: span 2;
+    }
+  }
+
+  @media (max-width: $size-mobile) {
+    grid-template-columns: 1fr;
+
+    > :nth-child(n) {
+      grid-column: 1;
+      grid-row: auto;
+    }
+
+    // First card mobile adjustments
+    > :nth-child(4n + 1) {
+      &.imageCard {
+        flex-direction: column;
+
+        & > div:last-child {
+          width: 100%;
+          min-width: 100%;
+          height: 200px;
+
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    // Banner spans full width
+    .banner {
+      grid-column: 1;
+    }
+  }
+}

@@ -1,0 +1,86 @@
+@import '@styles/vars';
+
+.container {
+  position: relative;
+  padding: 0 20px;
+  margin: 0 auto;
+  max-width: 1418px;
+
+  .wrapper p {
+    @include adaptive-font(22, 16);
+    margin-bottom: 0;
+  }
+}
+
+.wrapper {
+  display: flex;
+  padding-left: 16.2%;
+  gap: 55px;
+
+  @media (max-width: $size-laptop) {
+    padding-left: 0;
+  }
+
+  @media (max-width: $size-tablet) {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+}
+
+.title {
+  margin-bottom: 50px;
+
+  @media (max-width: $size-tablet) {
+    margin-bottom: 30px;
+  }
+}
+
+.image {
+  min-width: 50%;
+
+  @media (max-width: $size-tablet) {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+.container .rightText {
+  align-self: flex-end;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-visual-sans);
+    @include adaptive-font(64, 30);
+    line-height: 107%;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+}
+
+.centered {
+  .wrapper {
+    padding-left: 0;
+
+    @media (max-width: $size-laptop) {
+      gap: 20px;
+    }
+  }
+
+  .title {
+    text-align: center;
+    margin-bottom: 70px;
+
+    @media (max-width: $size-tablet) {
+      margin-bottom: 30px;
+    }
+  }
+
+  .image {
+    min-width: 33%;
+  }
+}

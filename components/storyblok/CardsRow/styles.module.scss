@@ -1,0 +1,219 @@
+@import '@styles/vars';
+
+.mainContainer {
+  max-width: 1478px;
+  margin: 0 auto;
+
+  @media (max-width: 1600px) {
+    margin: 0 20px;
+  }
+}
+
+.headBlock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 60px;
+
+  @media (max-width: $size-desktop) {
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: $size-laptop) {
+    flex-wrap: wrap;
+  }
+}
+
+.title {
+  @include adaptive-font(64, 50);
+  font-weight: 600;
+  line-height: 107%;
+  color: #212121;
+  white-space: nowrap;
+
+  h2 {
+    margin-bottom: 0;
+  }
+}
+
+.descriptionWrapper {
+  display: flex;
+  justify-content: end;
+}
+
+.descriptionBottomWrapper {
+  display: flex;
+  justify-content: end;
+  margin-top: 60px;
+
+  @media (max-width: $size-desktop) {
+    margin-top: 40px;
+  }
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  max-width: 663px;
+
+  div p {
+    margin: 0;
+  }
+
+  @media (max-width: $size-laptop) {
+    gap: 18px;
+  }
+}
+
+.text {
+  @include adaptive-font(22, 18);
+  line-height: 115%;
+  color: #383838;
+
+  p {
+    margin: 0;
+  }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 299px;
+  height: 40px;
+}
+
+.cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 19px;
+
+  @media (max-width: $size-laptop) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  @media (max-width: $size-tablet) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 793px;
+  padding: 50px 44px;
+  border: 3px solid #FFFFFFFC;
+  border-radius: 49px;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  @media (max-width: $size-desktop) {
+    padding: 16px 16px;
+    border-radius: 26px;
+    height: 700px;
+  }
+
+  @media (max-width: $size-tablet) {
+    max-width: 480px;
+    width: 100%;
+  }
+
+  @media (max-width: $size-mobile) {
+    height: 585px;
+  }
+
+  &:last-child {
+    @media (max-width: $size-laptop) {
+      grid-column: 1 / -1;
+      justify-self: center;
+      width: 50%;
+    }
+
+    @media (max-width: $size-tablet) {
+      grid-column: auto;
+      width: 100%;
+      max-width: 480px;
+    }
+  }
+}
+
+.cardReverse {
+  flex-direction: column-reverse;
+  padding: 0 30px 44px;
+  border: 19px solid #FFFFFFFC;
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  height: 282px;
+  z-index: 2;
+
+
+  @media (max-width: $size-laptop) {
+    height: 200px;
+  }
+}
+
+.cardTitle h4 {
+  @include adaptive-font(33, 24);
+  margin-bottom: 25px;
+  font-weight: 600;
+  line-height: 107%;
+  color: #212121;
+
+  @media (max-width: $size-desktop) {
+    margin-bottom: 16px;
+  }
+}
+
+.cardText {
+  @include adaptive-font(18, 14);
+  line-height: 115%;
+  color: #5C5C5C;
+
+  div p {
+    margin: 0;
+  }
+}
+
+.cardButton {
+  display: flex;
+  height: 20px;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 107%;
+  color: #242424;
+}
+
+.cardImageWrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.cardImageWrapperReverse {
+  position: absolute;
+  top: 0;
+  bottom: unset;
+  left: 0;
+  width: 100%;
+}
+
+.cardImage img{
+    max-height: 442px;
+    height: auto;
+    width: 100%;
+
+    @media (max-width: $size-mobile) {
+      max-height: 388px;
+    }
+}

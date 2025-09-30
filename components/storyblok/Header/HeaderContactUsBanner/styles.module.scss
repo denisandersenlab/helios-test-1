@@ -1,0 +1,88 @@
+@import '../../../../styles/vars.scss';
+
+.headerContactUsBanner {
+  background: #f8faf7;
+  border-radius: 20px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 20px;
+
+  @media (max-width: $size-desktop) {
+    padding: 28px;
+    margin: 16px;
+  }
+
+  @media (max-width: $size-laptop) {
+    padding: 24px;
+    margin: 12px;
+    border-radius: 16px;
+  }
+
+  @media (max-width: $size-tablet) {
+    padding: 20px;
+    margin: 0;
+    border-radius: 0;
+  }
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #000;
+
+  @media (max-width: $size-desktop) {
+    font-size: 22px;
+  }
+
+  @media (max-width: $size-laptop) {
+    font-size: 20px;
+  }
+
+  @media (max-width: $size-tablet) {
+    font-size: 18px;
+  }
+}
+
+.text {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+
+  @media (max-width: $size-desktop) {
+    font-size: 15px;
+  }
+
+  @media (max-width: $size-tablet) {
+    font-size: 14px;
+  }
+}
+
+.link {
+  margin-top: 8px;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #005148;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.2s ease;
+
+    @media (max-width: $size-desktop) {
+      font-size: 15px;
+    }
+
+    @media (max-width: $size-tablet) {
+      font-size: 14px;
+    }
+
+    &:hover {
+      color: #003a33;
+    }
+  }
+}

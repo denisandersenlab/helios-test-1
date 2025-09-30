@@ -1,0 +1,137 @@
+@import '@styles/vars';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.79);
+  align-self: stretch;
+
+  @media (max-width: $size-laptop) {
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  &.green {
+    background-color: #17574A !important;
+
+    .title {
+      color: #D8FB97;
+    }
+
+    .text {
+      color: #E7EDE9;
+    }
+  }
+
+  &.lightGreen {
+    background: linear-gradient(323.46deg, #E0EBCE 27.6%, #E7EDE9 120.35%);
+  }
+}
+
+.secondary {
+  position: relative;
+  padding-left: 32%;
+  padding-top: 60px;
+  padding-bottom: 70px;
+  min-height: 330px;
+
+  @media (max-width: $size-laptop) {
+    padding: 40px 20px 40px 86px;
+    min-height: auto;
+  }
+
+  .icon {
+    position: absolute;
+    left: 9%;
+    top: 60px;
+    width: 90px;
+    height: 90px;
+    border-radius: 20px;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+
+    @media (max-width: $size-laptop) {
+      width: 46px;
+      height: 46px;
+      top: 40px;
+      left: 20px;
+      border-radius: 15px;
+    }
+  }
+
+  .title {
+    margin-top: 0;
+    margin-bottom: 20px;
+    @include adaptive-font(36, 22);
+    max-width: 380px;
+  }
+
+  .text {
+    color: #5C5C5C;
+    max-width: 380px;
+  }
+}
+
+.header {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 30px;
+
+  .icon,
+  .title {
+    margin: 0;
+  }
+
+  .icon {
+    width: 46px;
+  }
+
+  .title {
+    @include adaptive-font(32, 20);
+  }
+}
+
+.icon {
+  width: 68px;
+  margin-bottom: auto;
+
+  @media (max-width: $size-tablet) {
+    width: 55px;
+  }
+}
+
+.title {
+  line-height: 1;
+  margin-bottom: 10px;
+  font-family: var(--font-visual-sans);
+  @include adaptive-font(28, 20);
+}
+
+.title,
+.icon ~ .text {
+  margin-top: 44px;
+
+  @media (max-width: $size-laptop) {
+    margin-top: 30px;
+  }
+
+  @media (max-width: $size-tablet) {
+    margin-top: 20px;
+  }
+}
+
+.container .text {
+  color: rgba(92, 92, 92, 1);
+  font-size: 18px;
+  line-height: 1;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: $size-tablet) {
+    font-size: 16px;
+  }
+}

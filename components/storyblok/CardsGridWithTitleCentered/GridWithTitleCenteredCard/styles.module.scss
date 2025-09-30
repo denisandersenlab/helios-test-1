@@ -1,0 +1,114 @@
+@import '@/styles/vars.scss';
+
+.card {
+  background-color: #ffffff;
+  box-shadow: 0px 4px 4px 0px #00000040;
+  border-radius: 49px;
+}
+
+.twoColumn {
+  display: flex;
+  align-items: center;
+  gap: 61px;
+  padding: 30px;
+
+  @media (max-width: $size-laptop) {
+    flex-direction: column;
+    gap: 24px;
+    padding: 30px;
+  }
+
+  .content {
+    flex: 1;
+  }
+
+  .imageWrapper {
+    flex: 1;
+
+    @media (max-width: $size-laptop) {
+      width: 100%;
+    }
+  }
+}
+
+.singleColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 58px;
+  padding: 30px 30px 0 30px;
+
+  @media (max-width: $size-laptop) {
+    gap: 24px;
+    padding: 30px;
+  }
+
+  .imageWrapper {
+    height: 50%;
+
+    @media (max-width: $size-laptop) {
+      height: 200px;
+    }
+  }
+}
+
+.content {
+  display: flex;
+  max-width: 331px;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 32px;
+
+  @media (max-width: $size-laptop) {
+    max-width: 100%;
+    padding: 0;
+  }
+}
+
+.contentWithoutInnerTitle {
+  max-width: revert;
+}
+
+.imageWrapper {
+  & > div {
+    height: 100%;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.imageWrapperWithoutInnerTitle {
+  height: revert;
+}
+
+// Specific styles for cards 1 and 3 in without-inner-title layout
+.twoColumnWithoutInnerTitle {
+  .content {
+    flex: 0 0 40%;
+    padding: 0;
+  }
+
+  .imageWrapper {
+    flex: 0 0 50%;
+  }
+}
+
+.title {
+  font-family: 'WF Visual Sans', sans-serif;
+  font-weight: 600;
+  @include adaptive-font(36, 20);
+  line-height: 115%;
+  color: #212121;
+}
+
+.text {
+  p {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    @include adaptive-font(18, 14);
+    line-height: 115%;
+    color: #5c5c5c;
+  }
+}

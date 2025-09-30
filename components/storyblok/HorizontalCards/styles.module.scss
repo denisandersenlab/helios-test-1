@@ -1,0 +1,115 @@
+@import '@styles/vars';
+
+.contentContainer {
+  max-width: 1462px;
+  margin: 0 auto;
+
+  @media (max-width: 1600px) {
+    margin: 0 20px;
+  }
+}
+
+.topText {
+  @include adaptive-font(18, 14);
+  margin-bottom: 17px;
+  line-height: 120%;
+  text-align: center;
+  color: #5C5C5C;
+}
+
+.title h2 {
+  @include adaptive-font(64, 48);
+  margin-bottom: 24px;
+  font-weight: 600;
+  line-height: 107%;
+  text-align: center;
+  color: #212121;
+}
+
+.text {
+  @include adaptive-font(24, 18);
+  line-height: 120%;
+  text-align: center;
+  color: #5C5C5C;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+
+  @media (max-width: $size-tablet) {
+    flex-direction: column;
+  }
+}
+
+.cardContentFirst {
+  flex-direction: row-reverse;
+
+  @media (max-width: $size-tablet) {
+    flex-direction: column;
+  }
+}
+
+.cardImage {
+  width: 50%;
+
+  @media (max-width: $size-tablet) {
+    width: 100%;
+  }
+}
+
+.cardImageProportion {
+  width: 55%;
+
+  @media (max-width: $size-tablet) {
+    width: 100%;
+  }
+}
+
+.cardContent {
+  width: 50%;
+
+  @media (max-width: $size-tablet) {
+    width: 100%;
+  }
+}
+
+.cardContentProportion {
+  width: 40%;
+
+  @media (max-width: $size-tablet) {
+    width: 100%;
+  }
+}
+
+.cardTopText {
+  margin-bottom: 15px;
+  color: #005148;;
+}
+
+.cardTitle {
+  margin-bottom: 18px;
+  color: #212121;
+}
+
+.cardText {
+  color: #5C5C5C;
+}
+
+.cardButton {
+  width: 138px;
+  height: 51px;
+  border-radius: 37px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  box-shadow: 0 5px 4px 0 #3264FF26;
+}

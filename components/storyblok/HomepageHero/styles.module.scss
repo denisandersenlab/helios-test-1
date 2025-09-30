@@ -1,0 +1,217 @@
+@import '@styles/vars';
+
+.container {
+  padding: 0 28px;
+  display: flex;
+  max-width: 1518px;
+  align-items: center;
+  margin: 120px auto 200px;
+  
+  @media (max-width: $size-desktop) {
+    flex-direction: column;
+  }
+
+  @media (max-width: $size-laptop) {
+    padding: 0 20px;
+    margin-top: 70px;
+    margin-bottom: 100px;
+  }
+
+  @media (max-width: $size-tablet) {
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+}
+
+.content {
+  width: 50%;
+  padding-right: 5rem;
+  font-size: 22px;
+  position: relative;
+  z-index: 1;
+
+  h1 span {
+    display: inline-block;
+    margin-bottom: 7px;
+  }
+
+  @media (max-width: $size-desktop) {
+    width: 100%;
+    margin-bottom: 40px;
+    padding-right: 0;
+  }
+}
+
+.content .topLink {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  border: 1px solid rgba(177, 200, 183, 0.28);
+  background: rgba(216, 251, 151, 1);
+  border-radius: 20px;
+  padding: 9px 17px 7px 14px;
+  text-decoration: none;
+  color: rgb(0, 81, 72, 1);
+  font-size: 15px;
+  font-weight: 600;
+
+  @media (max-width: $size-mobile) {
+    padding: 6px 12px 6px 10px;
+    font-size: 14px;
+  }
+}
+
+.content .topLinkIcon {
+  width: auto;
+  margin-right: 9px;
+
+  img {
+    height: auto;
+    width: 69px;
+    object-fit: contain;
+  }
+
+  @media (max-width: $size-mobile) {
+    img {
+      display: none;
+    }
+  }
+}
+
+.arrowIcon {
+  fill: rgb(0, 81, 72, 1);
+  margin-left: 12px;
+}
+
+.title {
+  margin-bottom: 1.25rem;
+}
+
+.text {
+  margin-bottom: 2.75rem;
+  line-height: 1.5rem;
+  color: #383838;
+
+  @media (max-width: $size-laptop) {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+}
+
+.features {
+  margin-bottom: 3.5rem;
+  display: flex;
+  gap: 1.5rem;
+
+  @media (max-width: $size-laptop) {
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: $size-tablet) {
+    gap: 20px;
+  }
+
+  @media (max-width: $size-tablet) {
+    flex-direction: column;
+  }
+}
+
+.feature {
+  width: 33%;
+  border-right: 1px solid #00514859;
+  padding-right: 2rem;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1;
+
+  &:last-child {
+    border: 0;
+  }
+
+  .icon {
+    margin-bottom: 1.5rem;
+    width: 27px;
+  }
+
+  @media (max-width: $size-laptop) {
+    font-size: 18px;
+  }
+
+  @media (max-width: $size-tablet) {
+    padding-right: 10px;
+
+    .icon {
+      margin-bottom: 12px;
+    }
+  }
+
+  @media (max-width: $size-tablet) {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #00514859;
+    padding-right: 0;
+    padding-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    .icon {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  @media (max-width: $size-tablet) {
+    flex-wrap: wrap;
+  }
+}
+
+.button {
+  margin-bottom: 1.5rem;
+  width: 27px;
+}
+
+.container .image {
+  position: relative;
+  width: 50%;
+  overflow: visible;
+
+  img {
+    border-radius: 16px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 33.9%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: calc(100% + 550px);
+    width: calc(100% + 550px);
+    background: url('/images/hero_bg.webp') no-repeat center center;
+    background-size: contain;
+  }
+
+  @media (max-width: $size-desktop) {
+    width: 100%;
+    max-width: 900px;
+
+    &::before {
+      left: 34.2%;
+      height: calc(100% + 650px);
+      width: calc(100% + 650px);
+    }
+  }
+
+
+  @media (max-width: $size-laptop) {
+    &::before {
+      display: none;
+    }
+  }
+}

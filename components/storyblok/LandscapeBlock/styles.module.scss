@@ -1,0 +1,80 @@
+@import '@styles/vars';
+
+.container {
+  position: relative;
+  padding: 0 20px;
+  margin: 0 auto;
+  max-width: 1558px;
+
+  p {
+    @include adaptive-font(22, 16);
+  }
+}
+
+.title {
+  margin-bottom: 30px;
+
+  @media (max-width: $size-mobile) {
+    margin-bottom: 20px;
+  }
+}
+
+.topText {
+  max-width: 875px;
+  margin-bottom: 30px;
+
+  @media (max-width: $size-mobile) {
+    margin-bottom: 20px;
+  }
+}
+
+.imageContent {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+
+  @media (max-width: $size-laptop) {
+    display: block;
+  }
+
+  @media (max-width: $size-mobile) {
+    margin-bottom: 30px;
+  }
+}
+
+.imageText {
+  align-self: flex-end;
+}
+
+.image {
+  margin-left: 170px;
+  width: calc(100% - 200px);
+
+  @media (max-width: $size-laptop) {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+.imageText ~ .image {
+  min-width: calc(100% - 440px);
+  margin-left: 0;
+}
+
+.bottomContent {
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: $size-tablet) {
+    display: block;
+  }
+}
+
+.leftText,
+.rightText {
+  width: calc(50% - 20px);
+
+  @media (max-width: $size-tablet) {
+    width: 100%;
+  }
+}

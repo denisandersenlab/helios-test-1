@@ -1,0 +1,58 @@
+.buttonPrimary {
+  display: inline-block;
+  border-radius: 37px;
+  background-color: #212121;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 100%;
+  padding: 18px 25px;
+  font-family: var(--font-inter);
+  transition: opacity 0.2s;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  text-wrap: nowrap;
+}
+
+.buttonPrimary:hover {
+  opacity: 0.9;
+}
+
+.buttonSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  text-wrap: nowrap;
+}
+
+.buttonSecondary:hover {
+  opacity: 0.8;
+}
+
+.buttonArrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+
+  svg {
+    fill: #242424;
+  }
+}
+
+.buttonArrow:hover {
+  opacity: 0.8;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  min-width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgb(160, 164, 161);
+  padding-left: 4px;
+}

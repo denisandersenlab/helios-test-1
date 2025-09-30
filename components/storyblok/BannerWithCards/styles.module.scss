@@ -1,0 +1,148 @@
+@import '@styles/vars';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+  min-height: 783px;
+  height: auto;
+  max-width: 1520px;
+  padding: 150px 50px 50px;
+  margin: 0 auto;
+  border-radius: 40px;
+  background: center/cover no-repeat;
+  box-sizing: border-box;
+
+  @media (max-width: 1600px) {
+    margin: 0 20px;
+  }
+
+  @media (max-width: $size-desktop) {
+    padding: 150px 20px 50px;
+  }
+
+  @media (max-width: $size-laptop) {
+    padding: 100px 20px 20px;
+  }
+
+  @media (max-width: $size-tablet) {
+    border-radius: 20px;
+  }
+
+  @media (max-width: $size-mobile) {
+    padding: 20px;
+  }
+}
+
+.infoBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.title h2 {
+  @include adaptive-font(64, 50);
+  margin-bottom: 15px;
+  font-weight: 600;
+  line-height: 107%;
+  color: #FFFFFF;
+}
+
+.text {
+  max-width: 680px;
+
+  div p {
+    @include adaptive-font(22, 18);
+    margin-bottom: 0;
+    line-height: 120%;
+    color: #FFFFFF;
+  }
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 13px;
+
+  @media (max-width: $size-laptop) {
+    grid-template-columns: 1fr 1fr;
+
+    & > :last-child {
+      grid-column: 1 / -1;
+      justify-self: center;
+      width: max-content;
+
+      @media (max-width: $size-tablet) {
+        width: fit-content;
+        max-width: 100%;
+      }
+    }
+  }
+
+  @media (max-width: $size-tablet) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+}
+
+.card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 286px;
+  padding: 35px 45px 45px;
+  background-color: #005148;
+  border-radius: 25px;
+
+  @media (max-width: 1400px) {
+    padding: 20px;
+  }
+
+  @media (max-width: $size-laptop) {
+    max-width: 445px;
+    min-height: 220px;
+    height: auto;
+  }
+
+  @media (max-width: $size-tablet) {
+    justify-self: stretch;
+    min-height: 180px;
+    width: 100%;
+    max-width: none;
+    border-radius: 20px;
+  }
+}
+
+.textCard {
+  @media (max-width: $size-laptop) {
+    min-height: 150px;
+    height: auto;
+  }
+}
+
+.cardTitle h3 {
+  @include adaptive-font(36, 14);
+  margin-bottom: 13px;
+  font-weight: 600;
+  line-height: 120%;
+  color: #D8FB97;
+}
+
+.cardText {
+  div p {
+    @include adaptive-font(18, 14);
+    margin-bottom: 0;
+    line-height: 120%;
+    color: #E7EDE9;
+  }
+}
+
+.cardIcon img {
+  height: 28px;
+  width: 28px;
+  margin-bottom: 35px;
+
+  @media (max-width: $size-laptop) {
+    margin-bottom: 20px;
+  }
+}

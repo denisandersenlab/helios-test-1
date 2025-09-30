@@ -1,0 +1,281 @@
+@import '@styles/vars';
+
+.mainContainer {
+  max-width: 1478px;
+  padding-bottom: 89px;
+  margin: 0 auto;
+  background-color: #005148;
+  border-radius: 50px;
+
+  @media (max-width: 1600px) {
+    margin: 0 20px;
+  }
+
+  @media (max-width: $size-desktop) {
+    padding-bottom: 40px;
+  }
+}
+
+.container {
+  padding: 75px 61px;
+  background-color: #E0EBCE;
+  border-radius: 50px;
+
+  @media (max-width: $size-desktop) {
+    padding: 40px;
+  }
+
+  @media (max-width: $size-mobile) {
+    padding: 20px;
+    border-radius: 30px;
+  }
+}
+
+.title h2 {
+  @include adaptive-font(64, 50);
+  margin-bottom: 60px;
+  font-weight: 600;
+  line-height: 107%;
+  color: #005148;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1272px;
+  height: 460px;
+
+  @media (max-width: $size-laptop) {
+    flex-direction: column;
+    height: 100%;
+  }
+}
+
+.image {
+  width: 389px;
+  height: 460px;
+
+  @media (max-width: $size-mobile) {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.slider {
+  position: relative;
+  max-width: 734px;
+  height: 420px;
+  width: 100%;
+  overflow: hidden;
+
+  @media (max-width: 1350px) {
+    max-width: 634px;
+  }
+
+  @media (max-width: $size-desktop) {
+    max-width: 600px;
+  }
+
+  @media (max-width: $size-tablet) {
+    height: 100%;
+  }
+}
+
+.sliderTrack {
+  display: flex;
+  transition: transform 0.6s ease;
+  height: 100%;
+}
+
+.imageSlide {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 100%;
+  padding-bottom: 31px;
+  box-sizing: border-box;
+
+  @media (max-width: $size-mobile) {
+    padding-bottom: 81px;
+  }
+}
+
+.quote {
+  @include adaptive-font(38, 22);
+  display: flex;
+  flex-direction: column;
+  height: 285px;
+  line-height: 107%;
+  color: #212121;
+
+  div p {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: $size-tablet) {
+    height: 100%;
+    margin-bottom: 40px;
+  }
+}
+
+.quoteText {
+  padding: 0 26px 15px;
+
+  @media (max-width: $size-mobile) {
+    padding: 0 0 15px;
+  }
+}
+
+.quoteMark {
+  @include adaptive-font(64, 50);
+  font-family: WF Visual Sans, sans-serif;
+  font-weight: 600;
+  line-height: 75%;
+
+  &:last-child {
+    text-align: end;
+  }
+}
+
+.slideLogo {
+  width: 184px;
+  height: 28px;
+  margin-bottom: 33px;
+  padding-left: 26px;
+
+  @media (max-width: $size-tablet) {
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: $size-mobile) {
+    padding-left: 0;
+  }
+}
+
+.position {
+  @include adaptive-font(19, 14);
+  padding-left: 26px;
+  font-weight: 500;
+  line-height: 120%;
+  color: #212121;
+
+  @media (max-width: $size-mobile) {
+    padding-left: 0;
+  }
+}
+
+.pagination {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 21px;
+  width: 100%;
+  padding: 0 26px;
+
+  @media (max-width: $size-mobile) {
+    flex-direction: column;
+    padding: 0;
+  }
+}
+
+.progress {
+  display: flex;
+  width: 100%;
+  max-width: 556px;
+}
+
+.dot {
+  flex: 1;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+}
+
+.activeDot {
+  background: #212121;
+}
+
+.arrows {
+  display: flex;
+  gap: 8px;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  font-size: 20px;
+  border: none;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.55;
+  }
+
+  &:first-child {
+    rotate: 180deg;
+  }
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  padding: 57px 61px 0;
+
+  @media (max-width: $size-desktop) {
+    flex-direction: column;
+    padding: 40px 40px 0;
+  }
+}
+
+.bottomText {
+  height: 54px;
+  padding-right: 52px;
+  margin-right: 52px;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 27px;
+  border-right: 1px solid #FFFFFFC9;
+
+  div p {
+    width: 215px;
+    margin-bottom: 0;
+
+    @media (max-width: $size-desktop) {
+      border-bottom: 1px solid #FFFFFFC9;
+      padding-bottom: 15px;
+    }
+  }
+
+  @media (max-width: $size-desktop) {
+    margin: 0 0 35px;
+    padding-right: 0;
+    border-right: none;
+    text-align: center;
+  }
+}
+
+.logos {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  height: 40px;
+
+  @media (max-width: $size-desktop) {
+    gap: 20px;
+    height: auto;
+  }
+
+  @media (max-width: $size-tablet) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

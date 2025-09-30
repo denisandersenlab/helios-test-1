@@ -1,0 +1,60 @@
+@import '@styles/vars';
+
+.container {
+  display: flex;
+  align-items: center;
+
+  @media (max-width: $size-laptop) {
+    flex-direction: column;
+  }
+}
+
+.content {
+  padding-right: 77px;
+
+  @media (max-width: $size-laptop) {
+    padding-right: 0;
+    padding-bottom: 50px;
+  }
+}
+
+.image {
+  min-width: 53.6%;
+
+  @media (max-width: $size-laptop) {
+    width: 700px;
+    max-width: 100%;
+  }
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #005148;
+  font-weight: 600;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.tabIcon {
+  width: 50px;
+}
+
+.title {
+  margin-bottom: 20px;
+
+  * {
+    @include adaptive-font(36, 24);
+    line-height: 107%;
+  }
+}
+.text {
+  font-size: 18px;
+  margin-bottom: 85px;
+
+  @media (max-width: $size-tablet) {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+}

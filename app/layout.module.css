@@ -1,0 +1,4 @@
+.body {
+  background: rgba(235, 242, 235, 1);
+  font-family: var(--font-rubik), var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}

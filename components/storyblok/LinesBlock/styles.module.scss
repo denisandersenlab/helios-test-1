@@ -1,0 +1,72 @@
+@import '@styles/vars';
+
+.container {
+  background-color: #005148;
+}
+
+.infoBlock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  width: 100%;
+  max-width: 1471px;
+  margin: 0 auto;
+
+  @media (max-width: 1530px) {
+    padding: 0 20px;
+  }
+
+  @media (max-width: $size-tablet) {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+}
+
+.info {
+  height: 306px;
+
+  @media (max-width: $size-tablet) {
+    height: 250px;
+  }
+}
+
+.title {
+  @include adaptive-font(64, 50);
+  font-weight: 600;
+  line-height: 107%;
+
+  h2 {
+    margin-bottom: 23px;
+  }
+}
+
+.text {
+  @include adaptive-font(22, 18);
+  line-height: 115%;
+
+  div p {
+    margin-bottom: 56px;
+
+    @media (max-width: $size-tablet) {
+      margin-bottom: 35px;
+    }
+  }
+}
+
+.button {
+  @include adaptive-font(19, 15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 205px;
+  height: 41px;
+  font-weight: 500;
+  line-height: 107%;
+}
+
+.smallImage {
+  height: 236px;
+  width: 344px;
+}

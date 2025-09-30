@@ -1,0 +1,254 @@
+@import '@/styles/vars.scss';
+
+.wrapper {
+  padding: 40px 0;
+
+  @media (max-width: $size-laptop) {
+    padding: 20px 0;
+  }
+}
+
+.container {
+  margin: 0 105px;
+
+  @media (max-width: $size-laptop) {
+    margin: 0 20px;
+  }
+
+  @media (max-width: $size-mobile-small) {
+    margin: 0 16px;
+  }
+}
+
+.mainTitle {
+  max-width: 1232px;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'WF Visual Sans', sans-serif;
+    font-weight: 600;
+    @include adaptive-font(64, 32);
+    line-height: 107%;
+    text-align: center;
+  }
+}
+
+.innerTitle {
+  display: none;
+
+  @media (max-width: $size-laptop) {
+    display: block;
+    margin-top: 20px;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: 'WF Visual Sans', sans-serif;
+      font-weight: 600;
+      @include adaptive-font(55, 28);
+      line-height: 107%;
+      color: #d8fb97;
+      text-align: center;
+    }
+  }
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, auto);
+  gap: 48px;
+  margin-top: 40px;
+
+  @media (max-width: $size-laptop) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 24px;
+    margin-top: 24px;
+  }
+}
+
+.card {
+  // Desktop styles will be provided later
+}
+
+.card1 {
+  grid-column: 1 / 4;
+  grid-row: 1 / 2;
+
+  @media (max-width: $size-laptop) {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
+
+.card2 {
+  grid-column: 4 / 6;
+  grid-row: 1 / 3;
+
+  @media (max-width: $size-laptop) {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
+
+.card3 {
+  grid-column: 1 / 3;
+  grid-row: 2 / 4;
+
+  @media (max-width: $size-laptop) {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
+
+.card4 {
+  grid-column: 3 / 6;
+  grid-row: 3 / 4;
+
+  @media (max-width: $size-laptop) {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
+
+.secondaryTitle {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 31px 0 54px 0;
+
+  @media (max-width: $size-laptop) {
+    display: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'WF Visual Sans', sans-serif;
+    font-weight: 600;
+    @include adaptive-font(55, 28);
+    line-height: 107%;
+    color: #d8fb97;
+  }
+}
+
+.primary {
+  background-color: #005148;
+
+  .mainTitle {
+    color: #fff;
+  }
+}
+
+.transparent {
+  // Desktop styles will be provided later
+}
+
+.cardsGridNoInnerTitle {
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: auto 70px auto;
+  gap: 48px;
+  align-items: start;
+
+  @media (max-width: $size-laptop) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+}
+
+.cardNoInnerTitle1 {
+  padding: 30px;
+  grid-column: 1 / 7; // 6 of 10 columns = 3/5
+  grid-row: 1 / 2;
+  flex-direction: row-reverse;
+  gap: 30px;
+
+  & > div:first-child {
+    flex: 0 0 60%;
+    height: 100%;
+
+    & > div {
+      border-radius: 49px;
+    }
+  }
+
+  & > div:last-child {
+    align-self: center;
+    padding: 0;
+  }
+
+  @media (max-width: $size-laptop) {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
+
+.cardNoInnerTitle2 {
+  grid-column: 7 / 11; // 4 of 10 columns = 2/5
+  grid-row: 1 / 3;
+  gap: 30px;
+
+  & > div:last-child {
+    max-width: revert;
+  }
+
+  @media (max-width: $size-laptop) {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
+
+.cardNoInnerTitle3 {
+  grid-column: 1 / 6; // 5 of 10 columns = 1/2
+  grid-row: 2 / 4;
+  flex-direction: row-reverse;
+  gap: 30px;
+  min-height: 500px;
+
+  @media (max-width: $size-laptop) {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  & > div:first-child {
+    flex: 0 0 60%;
+    height: 100%;
+
+    & > div {
+      border-radius: 49px;
+    }
+  }
+
+  & > div:last-child {
+    padding: 0;
+    align-self: center;
+  }
+}
+
+.cardNoInnerTitle4 {
+  grid-column: 6 / 11; // 5 of 10 columns = 1/2
+  grid-row: 3 / 4;
+  gap: 30px;
+
+  & > div:last-child {
+    max-width: revert;
+  }
+
+  @media (max-width: $size-laptop) {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
